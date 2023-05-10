@@ -145,39 +145,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex justify-center items-center bg-skobeloff">
-        <div className="py-16 lg:p-16 flex flex-col p-5 lg:flex-row justify-center items-center gap-20">
-          {
-            [
-              {
-                title: "Compra una Casa",
-                sub: "Buscar Casas"
-              },
-              {
-                title: "Vende una Casa",
-                sub: "Ver tus opciones"
-              },
-              {
-                title: "Renta una Casa",
-                sub: "Encuentra Rentadores"
-              }
-            ]
-            .map(({ title, sub }, key) =>
-              <div key={key} className="flex flex-col justify-center items-center gap-5 w-full mx-5 lg:w-1/4 shadow-lg rounded-lg p-16 transform hover:scale-110 transition cursor-pointer bg-skobeloff">
-                <Image src="/buy-a-home.png" alt="a home" width={250} height={250} />
-                <h3 className="font-bold text-2xl">{title}</h3>
-                <p>
-                  Find your place with an immersive photo experience and the most listings, including things you won’t find anywhere else.
-                </p>
-                <button className="border-skobeloff border-2 p-2 rounded-lg">
-                  {sub}
-                </button>
-              </div>
-            )
-          }
-        </div>
-      </section>
-
       <footer className="bg-skobeloff text-white p-10 flex flex-col gap-5 w-full">
         <div className="flex flex-col md:flex-row justify-between gap-5 w-full">
           <div className="w-full flex flex-col justify-between gap-24">
