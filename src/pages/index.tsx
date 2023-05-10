@@ -1,6 +1,5 @@
 import { SearchInput } from '@/components/NiceInput';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { faDiceD6 } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
