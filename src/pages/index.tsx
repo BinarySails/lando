@@ -140,7 +140,7 @@ export default function Home() {
         <div className="flex text-center w-full p-10">
           <div className="w-4/5">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.7242689840796!2d-101.38503242394057!3d20.68079388088284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842c7fa5dc564b2d%3A0x846a5c5526daaaa!2sSoriana%20S%C3%BAper%20-%20Cibeles!5e0!3m2!1sen!2smx!4v1683751890420!5m2!1sen!2smx" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d933.180709921237!2d-101.382532!3d20.680852!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842c7faf03b89537%3A0xdf8e31791c3930c6!2sNewlands%20Inmobiliaria%20y%20Servicios!5e0!3m2!1sen!2smx!4v1683762660158!5m2!1sen!2smx" 
               height="450"
               className="w-full border-0"
               allowFullScreen
@@ -163,7 +163,7 @@ export default function Home() {
               Encuentra la propiedad perfecta con nuestro equipo de expertos en bienes raíces.
             </p>
             <Link 
-              className="p-5 rounded-lg bg-skobeloff hover:bg-bittersweet text-white text-lg transition"
+              className="p-5 rounded-lg bg-skobeloff hover:bg-bittersweet text-white text-lg transition animate-bounce"
               href="/contacto"
             >
               Preguntanos
