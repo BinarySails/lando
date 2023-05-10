@@ -6,9 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: '#8492a6',
-        salmon: '#FFFAF1',
-        orange: '#ffa500'
+        timberwolf: "#edf2f1",
+        wenge: "#524948",
+        bittersweet: "#ff4747",
+        skobeloff: "#0b7a75",
+        "dark-spring-green": "#2c6e49",
       }
     },
   },
