@@ -97,9 +97,9 @@ function LiWithIcon({
 
 export default function  Contacto() {
   return (
-    <section className="py-20 w-full flex justify-center">
-      <div className="flex w-[1080px]">
-        <div className="w-1/2 flex flex-col gap-5">
+    <section className="py-10 lg:py-20 w-full flex justify-center">
+      <div className="flex lg:flex-row flex-col w-[1080px]">
+        <div className="w-full lg:w-1/2 flex flex-col gap-5 p-5">
           <h1 className="text-6xl font-bold">Habla con un <b className="text-bittersweet">experto</b></h1>
           <b>Nuestro equipo puede ayudarte:</b>
           <ul className="list-none ml-6 list-inside">
@@ -110,7 +110,7 @@ export default function  Contacto() {
             <LiWithIcon icon={faFeather}>Servicio excepcional garantizado.</LiWithIcon>
           </ul>
         </div>
-        <div className="flex justify-between bg-white shadow-xl p-8 w-1/2 rounded-lg">
+        <div className="flex justify-between bg-white shadow-xl p-8 w-full lg:w-1/2 rounded-lg">
           <div className="flex flex-col w-full gap-2">
             <Field display="Nombre" type="text" placeholder="Daniel" />
             <Field display="Apellido" type="text" placeholder="Mendez" />

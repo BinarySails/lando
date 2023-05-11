@@ -9,10 +9,10 @@ function Nav() {
                         NewLands
                     </Link>
                 </div>
-                <div className="hidden md:flex justify-evenly gap-10 px-7 w-1/4">
+                <div className="hidden md:flex px-7 w-1/4">
                     <Link 
                         href="/contacto"
-                        className="p-3 rounded-lg bg-skobeloff hover:bg-bittersweet text-white transition">
+                        className="p-3 rounded-lg bg-skobeloff hover:bg-bittersweet text-white transition ml-auto">
                         Contactanos
                     </Link>
                 </div>
@@ -38,7 +38,14 @@ function Footer() {
                     </h2>
 
                 </div>
-                <div className="flex flex-col lg:flex-row gap-16">
+                <div className="flex flex-col sm:flex-row gap-5 lg:gap-16">
+                    <div className="flex flex-col gap-1 w-52">
+                        <h3 className="text-2xl font-bold">Legal</h3>
+                        <a className="hover:text-bittersweet text-sm" href="#">Condiciones</a>
+                        <a className="hover:text-bittersweet text-sm" href="#">Privacidad</a>
+                        <a className="hover:text-bittersweet text-sm" href="#">Nosotros</a>
+                        <a className="hover:text-bittersweet text-sm" href="#">FAQ</a>
+                    </div>
                     <div className="flex flex-col gap-1 w-52">
                         <h3 className="text-2xl font-bold">Contacto</h3>
                         <a className="hover:text-bittersweet text-sm" href="mailto:inmobiliaria@newlands.com.mx">inmobiliaria@newlands.com.mx</a>
@@ -46,13 +53,6 @@ function Footer() {
                         <a className="hover:text-bittersweet text-sm" href="tel:+524621717984">(462) 171 79 84</a>
                         <a className="hover:text-bittersweet text-sm" href="tel:+5246214903002">(462) 490 30 02</a>
                         <a className="hover:text-bittersweet text-sm" href="tel:+524621896868">(462) 189 68 68</a>
-                    </div>
-                    <div className="flex flex-col gap-1 w-52">
-                        <h3 className="text-2xl font-bold">Legal</h3>
-                        <a className="hover:text-bittersweet text-sm" href="#">Condiciones</a>
-                        <a className="hover:text-bittersweet text-sm" href="#">Privacidad</a>
-                        <a className="hover:text-bittersweet text-sm" href="#">Nosotros</a>
-                        <a className="hover:text-bittersweet text-sm" href="#">FAQ</a>
                     </div>
                     <div>
                         <span>Calzada las Villas 830, 36643 Irapuato, Guanajuato</span>
