@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className='bg-timberwolf'>
       <Head>
-        <title>Lando</title>
+        <title>Lando | Deja que tu casa te encuentre</title>
       </Head>
 
       <section className="w-full">
