@@ -185,15 +185,15 @@ export default function Home() {
       <section className="w-full flex justify-center items-center bg-timberwolf">
         <div className="flex flex-col gap-16 md:gap-0 sm:flex-row items-center text-center w-full h-fit pt-10 sm:p-10">
           <div className="w-4/5 lg:w-3/5 flex flex-col gap-8 justify-center md:items-center">
-            <h3 className="text-lg lg:text-3xl">Vive la experiencia NewLands</h3>
+            <h3 className="text-lg lg:text-3xl">Vive la experiencia Lando</h3>
             <p className="text-3xl lg:text-5xl font-bold w-full md:max-w-[700px]">
               Encuentra la propiedad perfecta con nuestro equipo de expertos en bienes raíces.
             </p>
             <Link 
               className="p-5 rounded-lg bg-skobeloff hover:bg-bittersweet text-white text-lg transition animate-bounce"
-              href="/contacto"
+              href="#"
             >
-              Preguntanos
+              Explorar
             </Link>
           </div>
           <div className="flex flex-col min-h-[300px] relative justify-center lg:p-8 text-white">
