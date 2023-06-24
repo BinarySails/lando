@@ -39,7 +39,7 @@ const Nav = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
 
     return (
         <nav
-            className={`lg:flex justify-center flex bg-timberwolf border-b-4 border-skobeloff w-full z-10 fixed transition-transform duration-300 ease-in-out top-0 left-0 ${scrollingDirection === "up" ? "transform translate-y-0" : "transform -translate-y-full"}`}
+            className={`lg:flex justify-between lg:justify-center flex bg-timberwolf border-b-4 border-skobeloff w-full z-10 fixed transition-transform duration-300 ease-in-out top-0 left-0 ${scrollingDirection === "up" ? "transform translate-y-0" : "transform -translate-y-full"}`}
             ref={ref}
         >
             <div className="flex justify-between items-center w-full lg:px-10">
@@ -146,7 +146,7 @@ Nav.displayName = 'Nav';
 function Footer() {
     return(
         <footer className="bg-skobeloff text-white p-10 flex flex-col gap-5 w-full">
-            <div className="flex flex-col md:flex-row justify-between gap-5 w-full">
+            <div className="flex flex-col lg:flex-row justify-between gap-5 w-full">
                 <div className="w-full flex flex-col justify-between gap-24">
                     <h2 className="text-3xl uppercase font-bold">
                         Deja que tu nuevo <span className="text-bittersweet">hogar</span><br />

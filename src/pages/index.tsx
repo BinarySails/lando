@@ -1,7 +1,7 @@
 import { SearchInput } from "@/components/NiceInput";
 import { faHeart, faPersonWalking, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +53,11 @@ export default function Home() {
                 }
               }}
               aria-label="My Images"
+              hasTrack={false}
             >
+              <SplideTrack
+                className="w-[92%] ml-auto mr-auto"
+              >
               {
                 [
                   {
@@ -121,7 +125,7 @@ export default function Home() {
                 ]
                 .map((it, key) => {
                   return <SplideSlide key={key} className="flex flex-col shadow-lg">  
-                    <div className="relative w-full min-h-[200px] bg-[url('/irapuato.jpg')] bg-no-repeat bg-cover bg-center rounded-t" />
+                    <div className="relative min-h-[200px] bg-[url('/irapuato.jpg')] bg-no-repeat bg-cover bg-center rounded-t" />
 
                     <div className="bg-white rounded-b">
                       <div className="p-3">
@@ -145,6 +149,7 @@ export default function Home() {
                   </SplideSlide>
                 })
               }
+              </SplideTrack>
             </Splide>
           </div>
         </div>
@@ -212,7 +217,7 @@ export default function Home() {
         >
           <SplideSlide className="flex justify-center">
             <div className="max-w-lg h-full flex flex-col justify-center items-center p-16 gap-5">
-              <Image src="/sponsors/crunchbase.png" alt="" width={200} height={200} />
+              <Image src="/sponsors/codelaunch.png" alt="" width={200} height={200} />
               <p className="text-center">
                 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
               </p>
@@ -220,7 +225,7 @@ export default function Home() {
           </SplideSlide>
           <SplideSlide className="flex justify-center">
             <div className="max-w-lg h-full flex flex-col justify-center items-center p-16 gap-5">
-              <Image src="/sponsors/codelaunch.png" alt="" width={200} height={200} />
+              <Image src="/sponsors/crunchbase.png" alt="" width={200} height={200} />
               <p className="text-center">
                 Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
               </p>
