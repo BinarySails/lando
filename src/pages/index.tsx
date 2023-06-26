@@ -6,6 +6,19 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+type Property = {
+  price: number,
+  properties: Array<{
+    title: string,
+    value: number
+  }>,
+  location: string,
+  broker: string
+};  
+
+
+const properties = ([] as Array<Property>);
+
 export default function Home() {
   return (
     <main className="bg-timberwolf">
@@ -35,122 +48,68 @@ export default function Home() {
         <div className="px-28 py-16 lg:mx-28 lg:px-0 w-full gap-10 flex flex-col">
           <h2 className="w-full text-center text-3xl font-bold">Nuestros Favoritos</h2>
           <div className="w-full justify-center items-center gap-6">
-            <Splide
-              options={{
-                rewind: true,
-                gap: "1rem",
-                perPage: 4,
-                breakpoints: {
-                  1300: {
-                    perPage: 3,
-                  },
-                  768: {
-                    perPage: 2,
-                  },
-                  640: {
-                    perPage: 1
-                  }
-                }
-              }}
-              aria-label="My Images"
-              hasTrack={false}
-            >
-              <SplideTrack
-                className="w-[92%] ml-auto mr-auto"
-              >
-              {
-                [
-                  {
-                    price: 100000000,
-                    properties: [{
-                      title: "bds",
-                      value: 3
-                    }, {
-                        title: "ba",
-                        value: 4
-                      }, {
-                        title: "m2",
-                        value: 134
-                      }],
-                    location: "Los Angeles, California, Estados Unidos",
-                    broker: "NEW LANDS Broker"
-                  },
-                  {
-                    price: 200000000,
-                    properties: [{
-                      title: "bds",
-                      value: 5
-                    }, {
-                        title: "ba",
-                        value: 2
-                      }, {
-                        title: "m2",
-                        value: 134
-                      }],
-                    location: "Queretaro, Quretaro, Mexico",
-                    broker: "NEW LANDS Broker"
-                  },
-                  {
-                    price: 200000000,
-                    properties: [{
-                      title: "bds",
-                      value: 5
-                    }, {
-                        title: "ba",
-                        value: 2
-                      }, {
-                        title: "m2",
-                        value: 134
-                      }],
-                    location: "Queretaro, Quretaro, Mexico",
-                    broker: "NEW LANDS Broker"
-                  },
-                  {
-                    price: 200000000,
-                    properties: [{
-                      title: "bds",
-                      value: 5
-                    }, {
-                        title: "ba",
-                        value: 2
-                      }, {
-                        title: "m2",
-                        value: 134
-                      }],
-                    location: "Queretaro, Quretaro, Mexico",
-                    broker: "NEW LANDS Broker"
-                  }
+            { !properties.length && 
+              <div className="w-full text-center">
+                Aun no hay propiedades
+              </div>
+            }
+            {
+              !!properties.length && 
+                <Splide
+                  options={{
+                    rewind: true,
+                    gap: "1rem",
+                    perPage: 4,
+                    breakpoints: {
+                      1300: {
+                        perPage: 3,
+                      },
+                      768: {
+                        perPage: 2,
+                      },
+                      640: {
+                        perPage: 1
+                      }
+                    }
+                  }}
+                  aria-label="My Images"
+                  hasTrack={false}
+                >
+                  <SplideTrack
+                    className="w-[92%] ml-auto mr-auto"
+                  >
+                    
+                    {
+                      properties
+                      .map((it, key) => {
+                        return <SplideSlide key={key} className="flex flex-col shadow-lg">  
+                          <div className="relative min-h-[200px] bg-[url('/irapuato.jpg')] bg-no-repeat bg-cover bg-center rounded-t" />
 
+                          <div className="bg-white rounded-b">
+                            <div className="p-3">
+                              <div className="text-2xl border-b mb-3 py-1">
+                                <span><b>${it.price.toLocaleString()}</b></span>
+                              </div>
+                              <div className="flex gap-2 text-sm">
+                                {it.properties.map((p, k) => <div key={`${k}-${p.title}`}>
+                                  <b>{p.value}</b> {p.title}
+                                </div>)}
+                              </div>
+                              <div className="text-sm text-wenge">
+                                <h2>{it.location}</h2>
+                              </div>
+                              <div className="text-sm text-wenge">
+                                <span>{it.broker}</span>
+                              </div>
+                            </div>
 
-                ]
-                .map((it, key) => {
-                  return <SplideSlide key={key} className="flex flex-col shadow-lg">  
-                    <div className="relative min-h-[200px] bg-[url('/irapuato.jpg')] bg-no-repeat bg-cover bg-center rounded-t" />
-
-                    <div className="bg-white rounded-b">
-                      <div className="p-3">
-                        <div className="text-2xl border-b mb-3 py-1">
-                          <span><b>${it.price.toLocaleString()}</b></span>
-                        </div>
-                        <div className="flex gap-2 text-sm">
-                          {it.properties.map((p, k) => <div key={`${k}-${p.title}`}>
-                            <b>{p.value}</b> {p.title}
-                          </div>)}
-                        </div>
-                        <div className="text-sm text-wenge">
-                          <h2>{it.location}</h2>
-                        </div>
-                        <div className="text-sm text-wenge">
-                          <span>{it.broker}</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </SplideSlide>
-                })
-              }
-              </SplideTrack>
-            </Splide>
+                          </div>
+                        </SplideSlide>
+                      })
+                    }
+                  </SplideTrack>
+                </Splide>
+            }
           </div>
         </div>
       </section>
@@ -218,25 +177,6 @@ export default function Home() {
           <SplideSlide className="flex justify-center">
             <div className="max-w-lg h-full flex flex-col justify-center items-center p-16 gap-5">
               <Image src="/sponsors/codelaunch.png" alt="" width={200} height={200} />
-              <p className="text-center">
-                Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-              </p>
-            </div>
-          </SplideSlide>
-          <SplideSlide className="flex justify-center">
-            <div className="max-w-lg h-full flex flex-col justify-center items-center p-16 gap-5">
-              <Image src="/sponsors/crunchbase.png" alt="" width={200} height={200} />
-              <p className="text-center">
-                Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-              </p>
-            </div>
-          </SplideSlide>
-          <SplideSlide className="flex justify-center">
-            <div className="max-w-lg h-full flex flex-col justify-center items-center p-16 gap-5">
-              <Image src="/sponsors/forbes.png" alt="" width={200} height={200} />
-              <p className="text-center">
-                Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-              </p>
             </div>
           </SplideSlide>
         </Splide>
