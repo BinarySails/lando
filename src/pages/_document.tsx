@@ -18,7 +18,7 @@ export default function Document() {
           }}
         >
         </Script>
-        <Script defer data-domain="lando.homes" src="https://plausible.io/js/script.js"></Script>
+        <Script defer strategy="afterInteractive" data-domain="lando.homes" src="https://plausible.io/js/script.js" id="plausible-script"></Script>
       </Head>
       <body>
         <Main />
