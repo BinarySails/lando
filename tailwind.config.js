@@ -11,7 +11,9 @@ module.exports = {
         bittersweet: "#ffa500",
         skobeloff: "#011c27",
         do: "#ff5408",
-        "notwhite": "#fffaff"
+        "notwhite": "#fffaff",
+
+        "inherit": "inherit",
       },
       fontFamily: {
         sans: ["Outfit", ...defaultTheme.fontFamily.sans],

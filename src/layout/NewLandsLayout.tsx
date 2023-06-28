@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { faBook, faGear, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffectHaveWindow } from "@/utilities";
 
 
 const checkScrollDiff = (el: HTMLDivElement) => {
@@ -141,11 +142,14 @@ const Nav = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
     );
 });
 
-Nav.displayName = 'Nav';
+Nav.displayName = "Nav";
 
-function Footer() {
+const Footer = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
     return(
-        <footer className="bg-skobeloff text-white p-10 flex flex-col gap-5 w-full">
+        <footer
+            className="bg-skobeloff text-white p-10 flex flex-col gap-5 w-full mt-auto"
+            ref={ref}
+        >
             <div className="flex flex-col lg:flex-row justify-between gap-5 w-full">
                 <div className="w-full flex flex-col justify-between gap-24">
                     <h2 className="text-3xl uppercase font-bold">
@@ -187,29 +191,39 @@ function Footer() {
             </div>
         </footer>
     );
-}
+});
+
+Footer.displayName = "Footer";
 
 export function Layout({children} : { children: React.ReactNode }) {
     const nav = useRef<HTMLDivElement>(null);
     const main = useRef<HTMLElement>(null);
+    const footer = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    useEffectHaveWindow(() => {
         if(nav.current && main.current) {
             const navHeight = nav.current.offsetHeight;
             main.current.style.marginTop = `${navHeight}px`;
         }
     }, []);
 
+    useEffectHaveWindow(() => {
+        if(footer.current && nav.current &&  main.current) {
+            const minHeight = window.innerHeight - footer.current.offsetHeight - nav.current.offsetHeight;
+            main.current.style.minHeight = `${minHeight}px`;
+        }
+    }, []);
+
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             <Nav ref={nav} />
             <main
-                className="bg-timberwolf"
+                className="bg-timberwolf flex-grow"
                 ref={main}
             >
                 { children }
             </main>
-            <Footer />
+            <Footer ref={footer} />
         </div>
     );
 }
