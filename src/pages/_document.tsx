@@ -9,14 +9,16 @@ export default function Document() {
         <Script strategy="afterInteractive" id="google-script-src" async src="https://www.googletagmanager.com/gtag/js?id=G-ZG7HVZ5EWR"></Script>
         <Script id="google-script"
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-ZG7HVZ5EWR');`
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZG7HVZ5EWR');
+`
           }}
         >
         </Script>
+        <Script defer data-domain="lando.homes" src="https://plausible.io/js/script.js"></Script>
       </Head>
       <body>
         <Main />
