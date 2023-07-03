@@ -7,18 +7,18 @@ export default function Privacidad() {
                     <p className="w-full text-3xl max-[400px]:text-xl min-[400px]:text-5xl font-bold">
                         Política de privacidad
                     </p>
-                    <p>
+                    <p className="max-[400px]:text-sm min-[400px]:px-10">
                         La privacidad de nuestros usuarios es importante para nosotros.
                     </p>
                 </div>
             </section>
             <section className="w-full flex">
-                <div className="w-full flex flex-col h-fit px-24 2xl:px-64 xl:px-48 md:px-24 max-[400px]:p-10 py-32">
+                <div className="w-full flex flex-col h-fit px-24 2xl:px-64 xl:px-48 md:px-24 min-[400px]:px-10 max-[400px]:p-10 py-32">
                     <div className="w-full flex flex-col justify-start gap-8 text-start self-start">
                         <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl font-bold">
                             Ultima vez actualizado: Junio 28, 2023
                         </p>
-                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 min-[400px]:px-32 font-bold pt-8">
+                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 font-bold pt-8">
                             Politicas de privacidad
                         </p>
                         <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl">
@@ -27,7 +27,7 @@ export default function Privacidad() {
                             Utilizamos sus datos personales para proporcionar y mejorar el Servicio. Al utilizar el Servicio, usted acepta la recopilación y el uso de información de acuerdo con esta Política de privacidad. Esta Política de privacidad se ha creado con la ayuda del generador de políticas de privacidad de TermsFeed.
                             <br/><br/>
                         </p>
-                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 min-[400px]:px-32 font-bold pt-8">
+                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 font-bold pt-8">
                             Interpretación y definiciones
                         </p>
 

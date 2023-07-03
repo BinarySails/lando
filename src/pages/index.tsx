@@ -114,7 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex flex-col p-10 md:p-5 lg:p-0 py-16 justify-center items-center bg-skobeloff gap-12">
+      <section className="w-full flex flex-col p-10 md:p-5 lg:p-16 py-16 justify-center items-center bg-skobeloff gap-12">
         <h2 className="text-3xl text-white">Porque Lando es mejor que todos</h2>
         <div className="flex flex-col sm:flex-row text-center w-full lg:p-10 gap-10 justify-center">
           <div className="p-10 w-full lg:w-1/5 flex flex-col gap-2 border rounded py-24">
