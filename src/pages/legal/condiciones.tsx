@@ -7,18 +7,18 @@ export default function Condiciones() {
                     <p className="w-full text-3xl max-[400px]:text-xl min-[400px]:text-5xl font-bold">
                         Terminos y condiciones
                     </p>
-                    <p className="max-[400px]:text-sm">
+                    <p className="max-[400px]:text-sm min-[400px]:px-10">
                         Acuerdos de servicio para usuarios y clientes de Lando
                     </p>
                 </div>
             </section>
             <section className="w-full flex">
-                <div className="w-full flex flex-col h-fit px-24 2xl:px-64 xl:px-48 md:px-24 max-[400px]:p-10 py-32">
+                <div className="w-full flex flex-col h-fit px-24 2xl:px-64 xl:px-48 md:px-24 min-[400px]:px-10 max-[400px]:p-10 py-32">
                     <div className="w-full flex flex-col justify-start gap-8 text-start self-start">
                         <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl font-bold">
                             Ultima vez actualizado: Junio 28, 2023
                         </p>
-                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 min-[400px]:px-32 font-bold pt-8">
+                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 font-bold pt-8">
                             TÉRMINOS DE USO
                         </p>
                         <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl">
