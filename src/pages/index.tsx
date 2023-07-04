@@ -114,24 +114,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full flex flex-col p-10 md:p-5 lg:p-0 py-16 justify-center items-center bg-skobeloff gap-12">
-        <h2 className="text-3xl text-white">Porque Lando es mejor que todos</h2>
+      <section className="w-full flex flex-col p-10 md:p-5 lg:p-0 lg:py-16 py-16 justify-center items-center bg-skobeloff gap-12">
+        <h2 className="text-3xl text-white text-center">Porque Lando es mejor que todos</h2>
         <div className="flex flex-col sm:flex-row text-center w-full lg:p-10 gap-10 justify-center">
-          <div className="p-10 w-full lg:w-1/5 flex flex-col gap-2 border rounded py-24">
+          <div className="p-10 w-full lg:w-1/4 flex flex-col gap-2 border rounded py-24">
             <FontAwesomeIcon className="text-notwhite text-6xl" icon={faShieldHalved} />
             <h3 className="text-bittersweet text-xl font-bold">Disponibilidad Garantizada</h3>
             <p className="text-white">
               Siempre a tu alcance, nunca te dejaremos sin respuesta.
             </p>
           </div>
-          <div className="p-10 w-full lg:w-1/5 flex flex-col gap-2 border rounded py-24">
+          <div className="p-10 w-full lg:w-1/4 flex flex-col gap-2 border rounded py-24">
             <FontAwesomeIcon className="text-notwhite text-6xl" icon={faPersonWalking} />
             <h3 className="text-bittersweet text-xl font-bold">Respaldo por Expertos</h3>
             <p className="text-white">
               Cuenta con nuestro respaldo profesional en cada paso del camino.
             </p>
           </div>
-          <div className="p-10 w-full lg:w-1/5 flex flex-col gap-2 border rounded py-24">
+          <div className="p-10 w-full lg:w-1/4 flex flex-col gap-2 border rounded py-24">
             <FontAwesomeIcon className="text-notwhite text-6xl" icon={faHeart} />
             <h3 className="text-bittersweet text-xl font-bold">Asistencia Inmediata</h3>
             <p className="text-white">

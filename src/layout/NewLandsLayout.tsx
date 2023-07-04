@@ -23,7 +23,7 @@ const Nav = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const isScrollingUp = scrollTop < lastScrollTop;
+            const isScrollingUp = scrollTop < lastScrollTop || scrollTop <= 0;
 
             setScrollingDirection(isScrollingUp ? "up" : "down");
             lastScrollTop = scrollTop;
