@@ -168,7 +168,7 @@ const Footer = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
                     </div>
                     <div className="flex flex-col gap-1 min-w-[150px]">
                         <h3 className="text-2xl font-bold">Nosotros</h3>
-                        <a className="hover:text-bittersweet text-sm" href="#">Blog</a>
+                        <Link className="hover:text-bittersweet text-sm" href="/blog">Blog</Link>
                         <a className="hover:text-bittersweet text-sm" href="#">Quienes Somos</a>
                         <a className="hover:text-bittersweet text-sm" href="#">Trabaja en Lando</a>
                     </div>

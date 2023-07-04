@@ -2,26 +2,26 @@
 export default function Condiciones() {
     return (
         <main>
-            <section>
-                <div className="flex flex-col text-center gap-8 justify-center items-center bg-skobeloff text-white py-32">
-                    <p className="text-3xl lg:text-5xl font-bold w-full md:max-w-[700px] ">
+            <section className="w-full flex">
+                <div className="w-full flex flex-col text-center gap-8 justify-center items-center bg-skobeloff text-white py-32 max-[400px]:p-10">
+                    <p className="w-full text-3xl max-[400px]:text-xl min-[400px]:text-5xl font-bold">
                         Terminos y condiciones
                     </p>
-                    <p>
+                    <p className="max-[400px]:text-sm min-[400px]:px-10">
                         Acuerdos de servicio para usuarios y clientes de Lando
                     </p>
                 </div>
             </section>
             <section className="w-full flex">
-                <div className="flex flex-col w-full h-fit px-[512px] py-32">
-                    <div className="flex flex-col justify-start gap-8 text-start self-start sm:pt-10">
-                        <p className="text-xl lg:text-2xl w-full font-bold">
+                <div className="w-full flex flex-col h-fit px-24 2xl:px-64 xl:px-48 md:px-24 min-[400px]:px-10 max-[400px]:p-10 py-32">
+                    <div className="w-full flex flex-col justify-start gap-8 text-start self-start">
+                        <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl font-bold">
                             Ultima vez actualizado: Junio 28, 2023
                         </p>
-                        <p className="text-2xl lg:text-3xl font-bold w-full md:max-w-[700px] pt-8">
+                        <p className="text-2xl max-[400px]:text-xl min-[400px]:text-3xl max-[400px]:pt-4 font-bold pt-8">
                             TÉRMINOS DE USO
                         </p>
-                        <p className="text-xl lg:text-2xl w-full">
+                        <p className="text-xl max-[400px]:text-base min-[400px]:text-2xl">
                             Somos Lando ("Compañía", "nosotros", "nuestro").
                             <br/><br/>
                             Operamos el sitio web Lando.homes (el "Sitio"), así como cualquier otro producto y servicio relacionado que se refiera o enlace a estos términos legales (los "Términos Legales") (colectivamente, "los Servicios").
@@ -36,78 +36,78 @@ export default function Condiciones() {
                             <br/><br/>
                             Recomendamos que imprima una copia de estos Términos Legales para sus registros.
                         </p>
-                        <p className="text-2xl lg:text-3xl font-bold w-full md:max-w-[700px] pt-8">
+                        <p className="text-2xl min-[400px]:text-3xl max-[400px]:text-xl font-bold pt-8 max-[400px]:pt-4">
                             TABLA DE CONTENIDOS
                         </p>
-                        <div className="text-xl lg:text-2xl w-full">
+                        <div className="text-xl min-[400px]:text-2xl max-[400px]:text-base max-[400px]:px-4">
                             <ol className="list-decimal list-inside">
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#nuestros-servicios">Nuestros servicios</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#derechos-de-propiedad-intelectual">Derechos de propiedad intelectual</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#representaciones-del-usuario">Representaciones del usuario</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#registro-del-usuario">Registro del usuario</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#productos">Productos</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#compras-y-pago">Compras y pago</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#politica-de-devoluciones">Política de devoluciones</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#actividades-prohibidas">Actividades prohibidas</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#contribuciones-generadas-por-el-usuario">Contribuciones generadas por el usuario</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#licencia-de-contribucion">Licencia de contribución</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#gestion-de-los-servicios">Gestión de los servicios</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#plazo-y-terminacion">Plazo y terminación</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#modificaciones-e-interrupciones">Modificaciones e interrupciones</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#legislacion-aplicable">Legislación aplicable</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#resolucion-de-disputas">Resolución de disputas</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#correcciones">Correcciones</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#descargo-de-responsabilidad">Descargo de responsabilidad</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#limitaciones-de-responsabilidad">Limitaciones de responsabilidad</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#indemnizacion">Indemnización</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#datos-del-usuario">Datos del usuario</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#comunicaciones-electronicas-transacciones-y-firmas">Comunicaciones electrónicas, transacciones y firmas</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#varios">Varios</a>
                                 </li>
-                                <li className="text-xl lg:text-2xl w-full">
+                                <li>
                                     <a className="text-blue-600/75" href="#contactenos">Contáctenos</a>
                                 </li>
                             </ol>
