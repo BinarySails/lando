@@ -1,13 +1,8 @@
+import { buildUrl } from '@/utilities';
 import { InferGetStaticPropsType } from 'next'
 import Image from 'next/image';
 import Link from 'next/link'
-
-interface Post {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-}
+import { BlogPosts } from '../api/blog/common';
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
@@ -23,14 +18,14 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
                 </div>
             </section>
             <section className='grid grid-cols-1 md:grid-cols-2 px-48 2xl:px-40 xl:px-32 md:px-24 min-[400px]:px-10 min-[400px]:py-16 max-[400px]:p-10 xl:py-32 gap-8'>
-                {posts.map((post) => (
-                    <div className='rounded-lg border border-black hover:bg-slate-200 bg-white hover:scale-[1.01] transition-all' key={post.id}>
-                        <Link href={`/posts/${post.id}`}>
+                {posts.map(({ slug, name, description }) => (
+                    <div className='rounded-lg border border-black hover:bg-slate-200 bg-white hover:scale-[1.01] transition-all' key={slug}>
+                        <Link href={`/blog/${slug}`}>
                             <div className='group'>
-                                <Image src={`https://picsum.photos/seed/${post.id}/1000/600`} alt='image' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} className='filter brightness-100 group-hover:brightness-50 transition-all' />
+                                <Image src={`https://picsum.photos/seed/${slug}/1000/600`} alt='image' width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }} className='filter brightness-100 group-hover:brightness-50 transition-all' />
                                 <div className='flex flex-col justify-between p-4 gap-4'>
-                                    <h2 className='text-lg lg:text-3xl font-bold'>{post.title}</h2>
-                                    <p className='text-base lg:text-2xl'>{post.body}</p>
+                                    <h2 className='text-lg lg:text-3xl font-bold'>{name}</h2>
+                                    <p className='text-base lg:text-2xl'>{description}</p>
                                 </div>
                             </div>
                         </Link>
@@ -42,10 +37,8 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 }
 
 export async function getStaticProps() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    let posts: Post[] = await res.json()
-
-    posts = posts.slice(0, 10);
+    const res = await fetch(buildUrl('/api/blog'))
+    const posts: BlogPosts = await res.json()
 
     return {
         props: {
