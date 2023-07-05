@@ -8,7 +8,7 @@ export function CustomError({code, message}: {
   return (
     <div className="w-full min-h-[inherit] flex flex-col justify-center items-center">
       <Head>
-        <title>Lando | {code} - {message}</title>
+        <title>{`Lando | ${code} - ${message}`}</title>
       </Head>
       <div className="flex flex-col justify-center gap-2">
         <div className="flex justify-center items-center gap-5">

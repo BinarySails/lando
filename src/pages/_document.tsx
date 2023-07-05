@@ -5,7 +5,10 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
-        <link rel="icon" type="image/x-icon" href="/Emblem-1.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="any"/>
+        <link rel="icon" href="/Emblem-1.svg" type="image/svg+xml"/>
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+        <link rel="manifest" href="/manifest.webmanifest"/>
         <Script strategy="afterInteractive" id="google-script-src" async src="https://www.googletagmanager.com/gtag/js?id=G-ZG7HVZ5EWR"></Script>
         <Script id="google-script"
           dangerouslySetInnerHTML={{
