@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { faBook, faGear, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter, faInstagram, faFacebook, faTiktok, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffectHaveWindow } from "@/utilities";
 
@@ -151,11 +152,18 @@ const Footer = forwardRef((_props, ref: ForwardedRef<HTMLDivElement>) => {
             ref={ref}
         >
             <div className="flex flex-col lg:flex-row justify-between gap-5 w-full">
-                <div className="w-full flex flex-col justify-between gap-24">
+                <div className="w-full flex flex-col justify-between gap-10 pb-14">
                     <h2 className="text-3xl uppercase font-bold">
                         Deja que tu nuevo <span className="text-bittersweet">hogar</span><br />
                         te encuentre
                     </h2>
+                    <div className="flex flex-row sm:flex-row gap-5 lg:gap-5">
+                        <a href="https://www.linkedin.com/company/landohomes"><FontAwesomeIcon className="text-4xl hover:text-[#0e76a8] transition-all" icon={faLinkedin} /></a>
+                        <a href="https://twitter.com/LandoHomes"><FontAwesomeIcon className="text-4xl hover:text-[#00ACEE] transition-all" icon={faTwitter} /></a>
+                        <a href="https://www.tiktok.com/@landohomes"><FontAwesomeIcon className="text-4xl hover:text-[#ff0050] transition-all" icon={faTiktok} /></a>
+                        <a href="https://www.facebook.com/landohomes"><FontAwesomeIcon className="text-4xl hover:text-[#4267B2] transition-all" icon={faFacebook} /></a>
+                        <a href="https://www.instagram.com/landohomesoficial/"><FontAwesomeIcon className="text-4xl hover:text-[#E1306C] transition-all" icon={faInstagram} /></a>
+                    </div>
 
                 </div>
                 <div className="flex flex-col sm:flex-row gap-5 lg:gap-5">
