@@ -1,8 +1,11 @@
 import { useRouter } from 'next/router'
 import { InferGetStaticPropsType, GetStaticPropsContext } from 'next'
-import { BlogPost, BlogPosts } from '../api/blog/common'
-import { buildUrl } from '@/utilities'
+import { parseMdFile } from '@/utilities'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+
+import fs from 'fs';
+import path from 'path';
+
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
     const router = useRouter()
@@ -39,13 +42,21 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(buildUrl('/api/blog'))
-    const posts: BlogPosts = await res.json()
+    const postsPath = path.join('public/posts');
+    const files = fs.readdirSync(postsPath);
 
-    // Get the paths to pre-render based on posts
-    const paths = posts.map((post) => ({
-        params: { slug: post.slug },
-    }))
+    const availableMdFiles = files.filter(p => p.endsWith(".md"));
+
+    const readFiles = await Promise.all(availableMdFiles.map(async p => {
+        const postPath = path.join(postsPath, p);
+        const file = fs.readFileSync(postPath);
+        const stripExt = p.substring(0, p.length - 3);
+        return [stripExt, file] as [string, Buffer];
+    }));
+
+    const paths = readFiles.map(([name, content]) => ({
+        params: { slug: parseMdFile(content, name).slug }
+    }));
 
     // pre-render only these paths at build time. { fallback: true } means other routes should serve a fallback page until the static page is generated.
     return { paths, fallback: true }
@@ -53,10 +64,15 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-    // params contains the post 'id'. If the route is like /posts/1, then params.id is 1
-    const res = await fetch(buildUrl(`/api/blog/${params?.slug}`))
-    const post: BlogPost = await res.json()
+    const postsPath = path.join('public/posts');
+    const slug = params?.slug;
+
+    const filePath = path.join(postsPath, slug + ".md");
+    const fileContent = fs.readFileSync(filePath).toString();
+    
+    const post = parseMdFile(fileContent, slug);
 
     // Pass post data to the page via props
     return { props: { post }, revalidate: 1 }
-    }
+
+}

@@ -1,8 +1,10 @@
-import { buildUrl } from '@/utilities';
 import { InferGetStaticPropsType } from 'next'
 import Image from 'next/image';
 import Link from 'next/link'
-import { BlogPosts } from '../api/blog/common';
+
+import fs from 'fs';
+import path from 'path';
+import { parseMdFile } from '@/utilities';
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
@@ -37,8 +39,19 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 }
 
 export async function getStaticProps() {
-    const res = await fetch(buildUrl('/api/blog'))
-    const posts: BlogPosts = await res.json()
+    const postsPath = path.join('public/posts');
+    const files = fs.readdirSync(postsPath);
+
+    const availableMdFiles = files.filter(p => p.endsWith(".md"));
+
+    const readFiles = await Promise.all(availableMdFiles.map(async p => {
+        const postPath = path.join(postsPath, p);
+        const file = fs.readFileSync(postPath);
+        const stripExt = p.substring(0, p.length - 3);
+        return [stripExt, file] as [string, Buffer];
+    }));
+
+    const posts = readFiles.map(([name, content]) => parseMdFile(content, name));
 
     return {
         props: {
